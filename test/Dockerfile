@@ -1,2 +1,2 @@
-FROM yeasy/simple-web:latest
-EXPOSE 8069
+FROM nginx:1.22
+COPY nginx.conf /etc/nginx/nginx.conf

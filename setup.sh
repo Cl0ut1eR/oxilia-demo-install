@@ -6,6 +6,6 @@ cd ../nginx
 bash nginxInstall.sh
 
 cd ../self-runner
-bash setupPart1.sh
+#bash setupPart1.sh
 
 printf "\n\nSuivre le reste des instructions dans le fichier README.md\n"
