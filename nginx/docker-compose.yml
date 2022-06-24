@@ -16,7 +16,6 @@ services:
         ports:
             - "80:80"
             - "443:443"
-            - "8069:8069"
     letsencrypt:
         image: "nginxproxy/acme-companion:2.2"
         container_name: "letsencrypt-helper"
