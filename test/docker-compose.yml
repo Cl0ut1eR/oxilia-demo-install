@@ -2,8 +2,8 @@ version: "3"
 
 services:
   test:
-    build: .
-    image: "mytest"
+    #build: .
+    image: "yeasy/simple-web:latest"
     container_name: "test"
     restart: "always"
     networks: 
