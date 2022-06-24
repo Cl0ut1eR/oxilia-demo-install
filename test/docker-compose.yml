@@ -13,5 +13,5 @@ services:
     expose:
       - "8000"
     environment:
-      - VIRTUAL_HOST=whoami.local
+      - VIRTUAL_HOST=localhost
       - VIRTUAL_PORT=8000
