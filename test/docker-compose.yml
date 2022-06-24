@@ -11,6 +11,7 @@ services:
     environment:
       - VIRTUAL_HOST="oxiliatest.ddns.net" 
       - LETSENCRYPT_HOST="oxiliatest.ddns.net"
+      - VIRTUAL_PORT=80
 networks:
   nginx:
     external: true
