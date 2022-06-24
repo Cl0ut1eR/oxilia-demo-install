@@ -8,6 +8,9 @@ services:
     restart: "always"
     networks: 
       - "nginx"
+    environment:
+      - VIRTUAL_HOST="oxiliatest.ddns.net" 
+      - LETSENCRYPT_HOST="oxiliatest.ddns.net"
 networks:
   nginx:
     external: true
