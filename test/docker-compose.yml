@@ -2,10 +2,8 @@ version: "3"
 
 services:
   test:
-    #build: .
     image: "yeasy/simple-web:latest"
     container_name: "test"
-    restart: "always"
     networks: 
       - "nginx"
     environment:
