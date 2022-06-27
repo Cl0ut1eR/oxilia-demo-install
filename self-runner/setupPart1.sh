@@ -20,7 +20,7 @@ printf "
 7) Répondez aux question du Self-Runner\n
     a) Nom du group de Runners (en ca de doute laisser par défaut)\n
     b) Nom du Runner (Nom qui apparaitera sur Github)\n
-    c) Labels, à utiliser pour avoir plusieurs serverus pour prod/dev/preprod...\n
+    c) Labels, à utiliser pour avoir plusieurs serveurs pour prod/dev/preprod...\n
     d) Nom du répértoire de travail (Laisser par défaut)\n
 8) Reculez de deux répertoires\n
     cd ../..\n
