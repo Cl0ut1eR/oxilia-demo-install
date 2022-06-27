@@ -18,5 +18,3 @@ echo    "6) Exécuter la première commande de la section configure, elle devrai
 printf  "\tExécutez la votre. ./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX\n"
 echo    "7) Exécuter la suite de l'installation avec la commande suivante :"
 printf  "\tbash ../setupPart2.sh\n"
-echo    "Appuyez sur entrer pour continuer"
-read

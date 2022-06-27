@@ -8,4 +8,5 @@ sudo apt -y remove \
     containerd.io \
     docker-compose
 sudo add-apt-repository --remove --yes "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo rm -fr /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
 sudo apt update && sudo apt autoclean
