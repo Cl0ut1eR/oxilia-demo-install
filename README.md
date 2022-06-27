@@ -7,7 +7,7 @@
 `git clone https://github.com/Cl0ut1eR/oxilia-demo-install`
 3. Allez dans le répertoire oxilia-demo-install<br>
 `cd oxilia-demo-install`
-4. Éxecuter la commande <br>``bash setup.sh``
+4. Éxecuter la commande <br>`bash setup.sh`
 5. Entrez le courriel sur lequel vous voulez recevoir l'information de validité des certificats.
 6. Suivre les instruction affiché a l'écran.
     1. Allez dans le répertoire self-runner/ations-runner.<br> 
@@ -28,10 +28,15 @@
     `cd ../..`
     9. Exécuter la suite de l'installation avec la commande suivante :<br>
     `bash ./partie2.sh`
+    10. Vérifier sur Github que le runner est en mode Idle.
 
 ## Erreurs
 * ### Github Action Self-Runner
-    1. Supprimer les anciennes version du Runner qui sont en conflis, elles sont situé dans ce cépertoire /etc/systemd/system/ <br>
+    1. Executez la commande suivante à partir du répertoire `actions-runner`<br>
+    `sudo ./svc.sh uninstall`
+    2. Supprimer le runner. Aller sur github dans la section des runners, puis cliquer sur le runner. Cliquez sur supprimer, copiez collez la ligne sur le serveur a partir du répertoire `actions-runner`
+    3. Supprimer les anciennes version du Runner qui sont en conflis, elles sont situé dans ce cépertoire /etc/systemd/system/ <br>
     `sudo rm /etc/systemd/system/actions.runner.User-Repo.RunnerName.service`
-    2. Relancer le fichier partie2.sh<br>
-    `bash ./partie2.sh`
+    4. Sur github créez un nouveau runner puis copiez la meme ligne qu'a la section précédente.
+    5. Relancer le fichier **partie2.sh** situé dans le répertoire principal <br>
+    `bash partie2.sh`

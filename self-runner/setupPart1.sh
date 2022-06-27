@@ -25,4 +25,5 @@ printf "
 8) Reculez de deux répertoires
     cd ../..
 9) Exécuter la suite de l'installation avec la commande suivante :
-    bash ./partie2.sh\n"
+    bash ./partie2.sh
+10) Vérifier sur Github que le runner est en mode Idle.\n"
