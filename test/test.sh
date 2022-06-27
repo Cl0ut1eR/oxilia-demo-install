@@ -1,5 +1,1 @@
-mkdir ./test
-read -p "Enter fullname: " PATH
-mkdir ./test
-mkdir -p $PATH/test
-mkdir -p $PATH/allo
+docker run --rm -it --name test-et-allo -d -e VIRTUAL_HOST="allo.etienne.javmc.net" -e LETSENCRYPT_HOST="allo.etienne.javmc.net" -e VIRTUAL_PORT=80 --network nginx yeasy/simple-web:latest
