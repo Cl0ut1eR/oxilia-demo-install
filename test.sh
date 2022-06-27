@@ -1,1 +1,0 @@
-if ! grep -F "SUB_DOMAIN=" Test.env; then (echo "not present") fi

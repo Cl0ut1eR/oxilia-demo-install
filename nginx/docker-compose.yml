@@ -27,7 +27,7 @@ services:
             - "/run/docker.sock:/var/run/docker.sock:ro"
         environment:
             NGINX_PROXY_CONTAINER: "reverse-proxy"
-            DEFAULT_EMAIL: "user@oxiliatest.ydns.eu"
+            DEFAULT_EMAIL: ${EMAIL}
         restart: "always"
         depends_on:
             - "reverse-proxy"
