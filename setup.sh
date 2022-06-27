@@ -1,3 +1,4 @@
+clear -x
 # Set email for certificates
 read -p 'Email: ' Email
 echo "EMAIL="$Email > nginx/.env
