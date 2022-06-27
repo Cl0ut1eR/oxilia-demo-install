@@ -9,20 +9,20 @@ echo "06d62d551b686239a47d73e99a557d87e0e4fa62bdddcf1d74d4e6b2521f8c10  actions-
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
 clear -x
 printf "
-1) Allez dans le répertoire self-runner/ations-runner.\n
-    cd self-runner/actions-runner\n
-2) Allez sur le repo github\n
-3) Allez dans les réglages\n
-4) Cliquez sur Action puis Runners\n
-5) Cliquez sur ajouter un Self Runner\n
-6) Exécuter la première commande de la section configure, elle devrais ressembler à ceci :\n
-    Exécutez la votre. ./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX\n
-7) Répondez aux question du Self-Runner\n
-    a) Nom du group de Runners (en ca de doute laisser par défaut)\n
-    b) Nom du Runner (Nom qui apparaitera sur Github)\n
-    c) Labels, à utiliser pour avoir plusieurs serveurs pour prod/dev/preprod...\n
-    d) Nom du répértoire de travail (Laisser par défaut)\n
-8) Reculez de deux répertoires\n
-    cd ../..\n
-9) Exécuter la suite de l'installation avec la commande suivante :\n
+1) Allez dans le répertoire self-runner/ations-runner.
+    cd self-runner/actions-runner
+2) Allez sur le repo github
+3) Allez dans les réglages
+4) Cliquez sur Action puis Runners
+5) Cliquez sur ajouter un Self Runner
+6) Exécuter la première commande de la section configure, elle devrais ressembler à ceci :
+    Exécutez la votre. ./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX
+7) Répondez aux question du Self-Runner
+    a) Nom du group de Runners (en ca de doute laisser par défaut)
+    b) Nom du Runner (Nom qui apparaitera sur Github)
+    c) Labels, à utiliser pour avoir plusieurs serveurs pour prod/dev/preprod...
+    d) Nom du répértoire de travail (Laisser par défaut)
+8) Reculez de deux répertoires
+    cd ../..
+9) Exécuter la suite de l'installation avec la commande suivante :
     bash ./partie2.sh\n"
