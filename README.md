@@ -19,9 +19,14 @@
     6. Exécutez la première commande de la section configure, elle devrais ressembler à ceci :
     <br><b>Exemple :</b> 
     `./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX` 
-    7. Reculez de deux répertoires<br>
+    7. Répondez aux question du Self-Runner
+        1. Nom du group de Runners (en ca de doute laisser par défaut)
+        2. Nom du Runner (Nom qui apparaitera sur Github)
+        3. Labels, à utiliser pour avoir plusieurs serverus pour prod/dev/preprod...
+        4. Nom du répértoire de travail (Laisser par défaut)
+    8. Reculez de deux répertoires<br>
     `cd ../..`
-    8. Exécuter la suite de l'installation avec la commande suivante :<br>
+    9. Exécuter la suite de l'installation avec la commande suivante :<br>
     `bash ./partie2.sh`
 
 ## Erreurs
