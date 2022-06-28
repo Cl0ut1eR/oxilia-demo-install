@@ -1,7 +1,7 @@
 echo "Before newgrp"
 newgrp docker << TEST
 echo "After newgrp"
-docker ps
+bash test2.sh
 echo "test"
 echo "end"
 TEST
