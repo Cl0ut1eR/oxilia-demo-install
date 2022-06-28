@@ -5,6 +5,7 @@ mkdir actions-runner && cd actions-runner
 curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.293.0/actions-runner-linux-x64-2.293.0.tar.gz
 # Extract the installer
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
+cd ./actions-runner
 clear -x
 printf "*******************************************************************************
 *  Vous trouverez les instructions dans le fichier README.md disponible ici : *
