@@ -32,11 +32,11 @@
 
 ## Erreurs
 * ### Github Action Self-Runner
-1. Executez la commande suivante à partir du répertoire **actions-runner**<br>
+1. Executez la commande suivante à partir du répertoire **oxilia-demo-install/self-runner/actions-runner**<br>
     `sudo ./svc.sh uninstall`
-2. Supprimer le runner. Aller sur github dans la section des runners, puis cliquer sur le runner. Cliquez sur supprimer, copiez collez la ligne sur le serveur a partir du répertoire **actions-runner**
+2. Supprimer le runner. Aller sur github dans la section des runners, puis cliquer sur le runner. Cliquez sur supprimer, copiez collez la ligne sur le serveur à partir du répertoire **oxilia-demo-install/self-runner/actions-runner**
 3. Supprimer les anciennes version du Runner qui sont en conflis, elles sont situé dans ce cépertoire /etc/systemd/system/ <br>
     `sudo rm /etc/systemd/system/actions.runner.User-Repo.RunnerName.service`
 4. Sur github créez un nouveau runner puis copiez la meme ligne qu'a la section précédente.
-5. Relancer le fichier **partie2.sh** situé dans le répertoire principal <br>
+5. Relancer le fichier **partie2.sh** situé dans le répertoire **oxilia-demo-install/** <br>
     `bash partie2.sh`
