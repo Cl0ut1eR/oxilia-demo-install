@@ -1,4 +1,4 @@
 cd ./docker
 bash DockerInstallation.sh
 cd ..
-bash test.sh
+#bash test.sh
