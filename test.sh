@@ -1,5 +1,3 @@
-echo before
-#exec sg docker newgrp `id -gn`
-exec newgrp docker
-docker ps
-echo after
+echo "Before newgrp"
+exec /usr/bin/newgrp [group]
+echo "After newgrp"
