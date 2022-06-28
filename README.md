@@ -1,7 +1,7 @@
 # Github Action Setup
 
 ## Étapes
-
+0. Assurez-vous d'avoir un domaine et de rediriger <sub>(forward)</sub> un domaine générique <sub>(wildcard)</sub>vers votre serveur. EX: **\*.dev.domaine.com**
 1. Se connecter au serveur (SSH ou avec la méthode souhaité.).
 2. Importer les fichiers avec la commande suivante.<br>
 `git clone https://github.com/Cl0ut1eR/oxilia-demo-install`

@@ -15,7 +15,7 @@ printf "
 3) Allez dans les réglages
 4) Cliquez sur Action puis Runners
 5) Cliquez sur ajouter un Self Runner
-6) Exécuter la première commande de la section configure, elle devrais ressembler à ceci :
+6) Exécutez la première commande de la section configure, elle devrais ressembler à ceci :
     Exécutez la votre. ./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX
 7) Répondez aux question du Self-Runner
     a) Nom du group de Runners (en ca de doute laisser par défaut)
@@ -24,6 +24,6 @@ printf "
     d) Nom du répértoire de travail (Laisser par défaut)
 8) Reculez de deux répertoires
     cd ../..
-9) Exécuter la suite de l'installation avec la commande suivante :
+9) Exécutez la suite de l'installation avec la commande suivante :
     bash ./partie2.sh
 10) Vérifier sur Github que le runner est en mode Idle.\n"
