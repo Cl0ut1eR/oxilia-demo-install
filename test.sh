@@ -1,4 +1,4 @@
 echo before
-sudo usermod -a -G docker $USER
+exec sg docker newgrp `id -gn`
 docker ps
 echo after
