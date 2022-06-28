@@ -1,6 +1,5 @@
 clear -x
-printf "
-*******************************************************************************
+printf "*******************************************************************************
 *  Vous trouverez les instructions dans le fichier README.md disponible ici : *
 *           https://github.com/Cl0ut1eR/oxilia-demo-install#readme            *
 *******************************************************************************\n"
@@ -16,8 +15,7 @@ bash nginxInstall.sh
 # Github Self-Runner installation
 cd ../self-runner
 bash setupPart1.sh
-printf "
-*******************************************************************************
+printf "*******************************************************************************
 *  Vous trouverez les instructions dans le fichier README.md disponible ici : *
 *           https://github.com/Cl0ut1eR/oxilia-demo-install#readme            *
 *******************************************************************************\n"
