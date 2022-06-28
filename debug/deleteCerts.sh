@@ -1,0 +1,1 @@
+sudo rm -fr /var/lib/docker/nginx-volumes
