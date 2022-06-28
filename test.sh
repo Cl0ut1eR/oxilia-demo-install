@@ -1,3 +1,3 @@
 echo "Before newgrp"
-newgrp docker <<
+newgrp docker << \
 echo "After newgrp"
