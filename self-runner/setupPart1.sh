@@ -7,14 +7,16 @@ curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/ru
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
 clear -x
 printf "*******************************************************************************
+*  Vous trouverez les instructions dans le fichier README.md disponible ici : *
+*           https://github.com/Cl0ut1eR/oxilia-demo-install#readme            *
+*******************************************************************************
 *   1) Allez dans le répertoire self-runner/ations-runner.                    *
 *       cd self-runner/actions-runner                                         *
 *   2) Allez sur le repo github                                               *
 *   3) Allez dans les réglages                                                *
 *   4) Cliquez sur Action puis Runners                                        *
 *   5) Cliquez sur ajouter un Self Runner                                     *
-*   6) Exécutez la première commande de la section configure,                 *
-*                            elle devrais ressembler à ceci :                 *
+*   6) Exécutez la commande de la section configure, elle ressemble à ceci :  *
 *       ./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX      *
 *   7) Répondez aux question du Self-Runner                                   *
 *       a) Nom du group de Runners (en ca de doute laisser par défaut)        *
