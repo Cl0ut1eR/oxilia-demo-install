@@ -1,7 +1,3 @@
-echo "Before newgrp"
-/usr/bin/newgrp users <<EONG
+echo before
 docker ps
-echo "hello from within newgrp"
-id
-EONG
-echo "After newgrp"
+echo after
