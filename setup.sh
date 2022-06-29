@@ -12,7 +12,7 @@ bash DockerInstallation.sh
 
 # Nginx and Lets Encrypt installation
 cd ../nginx
-bash nginxInstall.sh
+sudo -u $USER bash nginxInstall.sh
 
 
 useradd -m selfrunner
