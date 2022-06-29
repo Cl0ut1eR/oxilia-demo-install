@@ -1,5 +1,5 @@
 # exécute les commandes en tant que selfrunner
-newgrp selfrunner << SELFRUNNER
+newgrp docker << SELFRUNNER
 cd ./actions-runner
 
 # Start self runner as a service

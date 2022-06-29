@@ -3,7 +3,7 @@
 sudo useradd selfrunner
 sudo usermod -a -G docker selfrunner
 # exécute les commandes suivantes en tant que selfrunner
-newgrp selfrunner << SELFRUNNER
+newgrp docker << SELFRUNNER
 # Create a folder
 mkdir actions-runner && cd actions-runner
 
