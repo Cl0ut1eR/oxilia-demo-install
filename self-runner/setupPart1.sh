@@ -3,16 +3,17 @@
 useradd -m selfrunner
 usermod -a -G docker selfrunner
 # exécute les commandes suivantes en tant que selfrunner
-newgrp selfrunner << SELFRUNNER
+#newgrp selfrunner << SELFRUNNER
 # Create a folder
-mkdir /home/selfrunner/actions-runner && cd /home/selfrunner/actions-runner
+sudo -u selfrunner mkdir /home/selfrunner/actions-runner
+cd /home/selfrunner/actions-runner
 
 # Download the latest runner package
 curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.293.0/actions-runner-linux-x64-2.293.0.tar.gz
 
 # Extract the installer
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
-SELFRUNNER
+#SELFRUNNER
 clear -x
 printf "*******************************************************************************
 *  Vous trouverez les instructions dans le fichier README.md disponible ici : *
