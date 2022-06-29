@@ -1,4 +1,4 @@
-cd ../self-runner/actions-runner
+cd /home/selfrunner/actions-runner
 sudo ./svc.sh uninstall
 clear -x
 echo "cd ../self-runner/actions-runner"
