@@ -7,3 +7,5 @@ printf "************************************************************************
 *                      Si ce n'est pas le cas, visitez :                      *
 *           https://github.com/Cl0ut1eR/oxilia-demo-install#erreurs           *
 *******************************************************************************\n"
+# Ouvre une instance terminal avec le group docker (avoir access au commande docker sans sudo)
+newgrp docker

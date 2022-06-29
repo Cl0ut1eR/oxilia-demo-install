@@ -19,5 +19,3 @@ NOSUDO
 cd ../self-runner
 bash setupPart1.sh
 
-# Ouvre une instance terminal avec le group docker (avoir access au commande docker sans sudo)
-newgrp docker

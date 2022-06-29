@@ -1,10 +1,18 @@
 # source github > repo > settings > action > runner > add self runner
+
+sudo useradd selfrunner
+sudo usermod -a -G docker selfrunner
+# exécute les commandes suivantes en tant que selfrunner
+newgrp selfrunner << SELFRUNNER
 # Create a folder
 mkdir actions-runner && cd actions-runner
+
 # Download the latest runner package
 curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.293.0/actions-runner-linux-x64-2.293.0.tar.gz
+
 # Extract the installer
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
+SELFRUNNER
 cd ./actions-runner
 clear -x
 printf "*******************************************************************************
@@ -30,3 +38,5 @@ printf "************************************************************************
 *       bash ./partie2.sh                                                     *
 *   10) Vérifier sur Github que le runner est en mode Idle.                   *
 *******************************************************************************\n"
+# Ouvre une instance terminal avec le group docker (avoir access au commande docker sans sudo)
+newgrp selfrunner
