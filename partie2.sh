@@ -1,6 +1,6 @@
 # Start Github Runner As Service
 cd ./self-runner
-sudo -u selfrunner bash setupPart2.sh
+sudo -u root bash setupPart2.sh
 clear -x
 printf "*******************************************************************************
 *       Terminé, vérifier sur Github que votre runner est en mode idle.       *
