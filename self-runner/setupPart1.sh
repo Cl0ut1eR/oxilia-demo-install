@@ -1,12 +1,9 @@
 # source github > repo > settings > action > runner > add self runner
 
-useradd -m selfrunner
-usermod -a -G docker selfrunner
 # exécute les commandes suivantes en tant que selfrunner
 #newgrp selfrunner << SELFRUNNER
 # Create a folder
-sudo -u selfrunner mkdir /home/selfrunner/actions-runner
-cd /home/selfrunner/actions-runner
+mkdir /home/selfrunner/actions-runner && cd /home/selfrunner/actions-runner
 
 # Download the latest runner package
 curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.293.0/actions-runner-linux-x64-2.293.0.tar.gz

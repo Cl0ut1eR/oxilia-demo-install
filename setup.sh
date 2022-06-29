@@ -10,12 +10,16 @@ echo "EMAIL="$Email > nginx/.env
 cd ./docker
 bash DockerInstallation.sh
 # Execute l'installation de nginx a partir du group docker sans etre administrateur
-newgrp docker << NOSUDO
+newgrp docker << DOCKER
 # Nginx and Lets Encrypt installation
 cd ../nginx
 bash nginxInstall.sh
-NOSUDO
+DOCKER
+
+useradd -m selfrunner
+usermod -a -G docker selfrunner
+
 # Github Self-Runner installation
 cd ../self-runner
-bash setupPart1.sh
+sudo -u selfrunner bash setupPart1.sh
 
