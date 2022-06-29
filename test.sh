@@ -1,2 +1,2 @@
-mkdir /home/selfrunner/mytest && cd /home/selfrunner/mytest
-touch helloworld.txt
+read TEST
+$TEST > allo.txt

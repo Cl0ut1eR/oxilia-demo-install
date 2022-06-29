@@ -35,3 +35,10 @@ printf "************************************************************************
 *       bash ./partie2.sh                                                     *
 *   10) Vérifier sur Github que le runner est en mode Idle.                   *
 *******************************************************************************\n"
+echo type your commande
+read COMMAND
+
+cd /home/selfrunner/actions-runner
+
+$COMMAND
+
