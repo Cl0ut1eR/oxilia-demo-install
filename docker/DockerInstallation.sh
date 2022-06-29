@@ -1,5 +1,10 @@
 # Installation of Docker CE and Compose
 # Source : https://computingforgeeks.com/how-to-install-docker-on-ubuntu/
+
+# Add user to docker group (remove the need for sudo docker)
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 sudo apt -y update
 # Install dependencies
 sudo apt -y install \
@@ -26,5 +31,3 @@ sudo apt -y install \
     docker-ce-cli \
     docker-ce \
     docker-compose
-# Add user to docker group (remove the need for sudo docker)
-sudo usermod -aG docker $USER

@@ -9,4 +9,5 @@ sudo apt -y remove \
     docker-compose
 sudo add-apt-repository --remove --yes "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo rm -fr /etc/apt/trusted.gpg.d/docker-archive-keyring.gpg
+sudo groupdel docker
 sudo apt update && sudo apt autoclean
