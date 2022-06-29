@@ -28,4 +28,3 @@ sudo apt -y install \
     docker-compose
 # Add user to docker group (remove the need for sudo docker)
 sudo usermod -aG docker $USER
-#newgrp docker

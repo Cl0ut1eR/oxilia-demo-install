@@ -5,6 +5,6 @@ if [[ $REPLY =~ ^[YyOo]$ ]]
 then
     bash ResetDocker.sh
     bash DockerRemove.sh
-    bash removeRunner.sh
+    sudo -u root bash removeRunner.sh
 fi
 
