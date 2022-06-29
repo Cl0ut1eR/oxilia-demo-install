@@ -1,4 +1,4 @@
-printf "Tapez la commande de suppression : \n"
+printf "Tapez la commande de suppression du runner github : \n"
 read COMMAND
 
 cd /home/selfrunner/actions-runner

@@ -15,8 +15,8 @@ cd ../nginx
 sudo -u $USER bash nginxInstall.sh
 
 
-useradd -m selfrunner
-usermod -a -G docker selfrunner
+sudo useradd -m selfrunner
+sudo usermod -a -G docker selfrunner
 
 # Github Self-Runner installation
 cd ../self-runner
