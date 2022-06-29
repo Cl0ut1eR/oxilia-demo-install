@@ -3,7 +3,7 @@
 sudo useradd selfrunner
 sudo usermod -a -G docker selfrunner
 # exécute les commandes suivantes en tant que selfrunner
-newgrp docker << SELFRUNNER
+#newgrp docker << SELFRUNNER
 # Create a folder
 mkdir actions-runner && cd actions-runner
 
@@ -12,7 +12,7 @@ curl -o actions-runner-linux-x64-2.293.0.tar.gz -L https://github.com/actions/ru
 
 # Extract the installer
 tar xzf ./actions-runner-linux-x64-2.293.0.tar.gz
-SELFRUNNER
+#SELFRUNNER
 cd ./actions-runner
 clear -x
 printf "*******************************************************************************
@@ -39,4 +39,4 @@ printf "************************************************************************
 *   10) Vérifier sur Github que le runner est en mode Idle.                   *
 *******************************************************************************\n"
 # Ouvre une instance terminal avec le group docker (avoir access au commande docker sans sudo)
-newgrp selfrunner
+#newgrp selfrunner
