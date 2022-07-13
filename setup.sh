@@ -14,9 +14,12 @@ bash DockerInstallation.sh
 cd ../nginx
 sudo -u $USER bash nginxInstall.sh
 
-
+# Setup to manage rights of selfrunner
 sudo useradd -m selfrunner
 sudo usermod -a -G docker selfrunner
+sudo mkdir /odoo
+sudo chown selfrunner /odoo
+
 
 # Github Self-Runner installation
 cd ../self-runner

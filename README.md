@@ -3,26 +3,26 @@
 ## Étapes
 0. Assurez-vous d'avoir un domaine et de rediriger <sub>(forward)</sub> un domaine générique <sub>(wildcard)</sub>vers votre serveur. EX: **\*.dev.domaine.com**
 1. Se connecter au serveur (SSH ou avec la méthode souhaité.).
-2. Importer les fichiers avec la commande suivante sur le serveur.<br>
+2. Importer les fichiers sur le serveur avec la commande suivante.<br>
 `git clone https://github.com/Cl0ut1eR/oxilia-demo-install`
 3. Allez dans le répertoire oxilia-demo-install<br>
 `cd oxilia-demo-install`
 4. Éxecuter la commande sur le serveur<br>`bash setup.sh`
 5. Entrez le courriel sur lequel vous voulez recevoir l'information de validité des certificats.
-6. Suivre les instruction affiché a l'écran.
+6. Suivre les instruction affiché a l'écran. **Sur un autre appareil**
     1. Allez sur le repo github
     2. Allez dans les réglages
     3. Cliquez sur Action puis Runners
     4. Cliquez sur ajouter un Self Runner
-    5. Collez la commande de la section configure, elle ressemble à ceci :
+    5. Collez la commande de la section configure **sur le serveur**, elle ressemble à ceci :
     <br><b>Exemple :</b> 
     `./config.sh --url https://github.com/USER/REPO --token XXXXXXXXX` 
     6. Répondez aux question du Self-Runner
         1. Nom du group de Runners (en ca de doute laisser par défaut)
         2. Nom du Runner (Nom qui apparaitera sur Github)
         3. Labels, à utiliser pour avoir plusieurs serveurs pour prod/dev/preprod...
-        4. Nom du répértoire de travail (Laisser par défaut)
-    7. Vérifier sur Github que le runner est en mode Idle.
+        4. Nom du répértoire de travail
+    7. **Sur votre autre appareil**, vérifiez sur Github que le runner est en mode Idle.
 
 ## Erreurs
 * ### Github Action Self-Runner
