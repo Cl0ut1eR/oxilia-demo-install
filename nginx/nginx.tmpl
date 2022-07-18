@@ -263,6 +263,9 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
+	{{ printf "# container" $container }}
+	{{ printf "# network" $CurrentContainer.Networks }}
+	{{ printf "# upstream_name" $upstream_name }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
@@ -404,8 +407,6 @@ server {
 			{{ $sum := sha1 $path }}
 			{{ $upstream := printf "%s-%s" $upstream_name $sum }}
 			{{ $dest := (or (first (groupByKeys $container "Env.VIRTUAL_DEST")) "") }}
-			{{ printf "# test" }}
-			{{ printf "# path" $network_tag }}
 			{{ template "location" (dict "Path" $path "Proto" $proto "Upstream" $upstream "Host" $host "VhostRoot" $vhost_root "Dest" $dest "NetworkTag" $network_tag) }}
 		{{ end }}
 		{{ if (not (contains $paths "/")) }}
