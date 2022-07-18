@@ -265,7 +265,7 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
-	{{ $tmp := printf "%s%s" $upstream_name "\/hello" }}
+	{{ $tmp := printf "%s%s" $upstream_name "/hello" }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
 	{{ template "upstream" (dict "Upstream" $tmp "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "666") }}
 {{ else }}
