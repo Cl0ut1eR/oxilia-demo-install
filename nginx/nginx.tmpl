@@ -89,7 +89,7 @@
 	{{ $networks := .Networks }}
 	{{ $debug_all := .Debug }}
 	{{ $force_port := .ForcePort }}
-upstream {{ .Upstream }}{{ if (.ForcePort) }} {{ printf ":".ForcePort}} {{ end }} {
+upstream {{ .Upstream }}{{ if (.ForcePort) }} {{ printf ":"$force_port}} {{ end }} {
 	{{ $server_found := "false" }}
 	{{ range $container := .Containers }}
         {{ $debug := (eq (coalesce $container.Env.DEBUG $debug_all "false") "true") }}
