@@ -265,7 +265,7 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
-	{{ $tmp := ($upstream_name "longpolling") }}
+	{{ $tmp := ${upstream_name}"longpolling" }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
 	{{ template "upstream" (dict "Upstream" $tmp "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8072") }}
 {{ else }}
