@@ -265,9 +265,9 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
-	{{ $longpolling := printf "%s%s" $upstream_name "/hello" }}
+	{{ $longpolling := printf "%s%s" $upstream_name "/coucou" }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" $longpolling "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "666") }}
+	{{ template "upstream" (dict "Upstream" $longpolling "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8072") }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
