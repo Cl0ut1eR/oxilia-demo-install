@@ -96,7 +96,7 @@ upstream {{ .Upstream }} {
         {{/* If only 1 port exposed, use that as a default, else 80 */}}
         {{ $defaultPort := (when (eq (len $container.Addresses) 1) (first $container.Addresses) (dict "Port" "80")).Port }}
         {{ $port := (coalesce $container.Env.VIRTUAL_PORT $defaultPort) }}
-        {{ $address := (coalesce $force_port (where $container.Addresses "Port" $port | first) }}
+        {{ $address := where $container.Addresses "Port" $port | first }}
         {{ if $debug }}
         # Exposed ports: {{ $container.Addresses }}
         # Default virtual port: {{ $defaultPort }}
@@ -122,7 +122,7 @@ upstream {{ .Upstream }} {
         # {{ $container.Name }}
         server {{ $containerNetwork.IP }}:{{ $address.Port }};
 					{{ printf "# test serv 2 update" }}
-					{{ printf "# test force port " $force_port }}
+					#{{ printf "# test force port " $force_port }}
                         {{ end }}
                     {{ else if $containerNetwork }}
         # {{ $container.Name }}
