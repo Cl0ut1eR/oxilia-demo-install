@@ -121,8 +121,9 @@ upstream {{ .Upstream }} {
                             {{ $server_found = "true" }}
         # {{ $container.Name }}
         server {{ $containerNetwork.IP }}:{{ $address.Port }};
-					{{ printf "# test serv 2 update" }}
+					{{ printf "# test serv 2 update x2" }}
 					#{{ printf "# test force port " $force_port }}
+					#{{ printf "# test port " $port }}
                         {{ end }}
                     {{ else if $containerNetwork }}
         # {{ $container.Name }}
@@ -272,7 +273,7 @@ server {
 	{{ printf "# network" $CurrentContainer.Networks }}
 	{{ printf "# upstream_name" $upstream_name }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8080") }}
+	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8085") }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
