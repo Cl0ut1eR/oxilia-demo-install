@@ -24,6 +24,21 @@
         4. Nom du répértoire de travail
     7. **Sur votre autre appareil**, vérifiez sur Github que le runner est en mode Idle.
 
+## Changer les port de Odoo
+Ne pas changer les ports Odoo, car cela n'est pas nécessaire. <br>
+Si vous souhaitez tout de même changer le port principale **8069** ou le port de longpolling **8072** <br>
+&emsp; Changez entre autre les fichiers `odoo.conf`, `Dockerfile`, `docker-compose.yml` se situant dans les fichier avec Github. Ainsi que le fichier `nginx.tmpl` se situant dans le répertoire nginx.
+
+## Sources
+* Nginx et les certificats. (letsencrypt-helper et reverse-proxy)<br>
+    source : https://github.com/nginx-proxy/nginx-proxy#readme
+* Installation docker.<br>
+    source : https://computingforgeeks.com/how-to-install-docker-on-ubuntu/
+* Github Self-Hosted Runner.
+    source : Github
+
+<sub>*Adaptations et modifications par Cl0ut1eR*</sub>
+
 ## Erreurs
 * ### Github Action Self-Runner
 1. Executez la commande suivante à partir du répertoire **oxilia-demo-install/debug/**<br>
