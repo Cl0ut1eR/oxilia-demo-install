@@ -263,7 +263,8 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
-	{{ printf "# container" $container }}
+	{{ printf "# test upstream 1" }}
+	{{ printf "# container" $containers }}
 	{{ printf "# network" $CurrentContainer.Networks }}
 	{{ printf "# upstream_name" $upstream_name }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
@@ -272,6 +273,10 @@ server {
 		{{ $sum := sha1 $path }}
 		{{ $upstream := printf "%s-%s" $upstream_name $sum }}
 		# {{ $host }}{{ $path }}
+		{{ printf "# test upstream 2" }}
+		{{ printf "# container" $containers }}
+		{{ printf "# network" $CurrentContainer.Networks }}
+		{{ printf "# upstream_name" $upstream_name }}
 		{{ template "upstream" (dict "Upstream" $upstream "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
 	{{ end }}
 {{ end }}
