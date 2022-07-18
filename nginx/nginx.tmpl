@@ -89,12 +89,13 @@
 	{{ $networks := .Networks }}
 	{{ $debug_all := .Debug }}
 	{{ $force_port := .ForcePort }}
-upstream {{ .Upstream }} {
+upstream {{ .Upstream }}{{ .ForcePort }} {
 	{{ $server_found := "false" }}
 	{{ range $container := .Containers }}
         {{ $debug := (eq (coalesce $container.Env.DEBUG $debug_all "false") "true") }}
         {{/* If only 1 port exposed, use that as a default, else 80 */}}
         {{ $defaultPort := (when (eq (len $container.Addresses) 1) (first $container.Addresses) (dict "Port" "80")).Port }}
+		{{/* Add the force port argument to add possibility to define the port from the code*/}}
         {{ $port := (coalesce $force_port $container.Env.VIRTUAL_PORT $defaultPort) }}
         {{ $address := where $container.Addresses "Port" $port | first }}
         {{ if $debug }}
@@ -115,22 +116,17 @@ upstream {{ .Upstream }} {
                             {{ $server_found = "true" }}
         # {{ $container.Node.Name }}/{{ $container.Name }}
         server {{ $container.Node.Address.IP }}:{{ $address.HostPort }};
-			{{ printf "# test serv 1 " }}
                         {{/* If there is no swarm node or the port is not published on host, use container's IP:PORT */}}
                         {{ else if $containerNetwork }}
                             {{ $server_found = "true" }}
         # {{ $container.Name }}
         server {{ $containerNetwork.IP }}:{{ $address.Port }};
-					{{ printf "# test serv 2 update x2" }}
-					#{{ printf "# test force port " $force_port }}
-					#{{ printf "# test port " $port }}
                         {{ end }}
                     {{ else if $containerNetwork }}
         # {{ $container.Name }}
                         {{ if $containerNetwork.IP }}
                             {{ $server_found = "true" }}
         server {{ $containerNetwork.IP }}:{{ $port }};
-					{{ printf "# test serv 3 " }}
                         {{ else }}
         # /!\ No IP for this network!
                     	{{ end }}
@@ -269,19 +265,13 @@ server {
 
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
-	{{ printf "# test upstream 1" }}
-	{{ printf "# network" $CurrentContainer.Networks }}
-	{{ printf "# upstream_name" $upstream_name }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8085") }}
+	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8072") }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
 		{{ $upstream := printf "%s-%s" $upstream_name $sum }}
 		# {{ $host }}{{ $path }}
-		{{ printf "# test upstream 2" }}
-		{{ printf "# network" $CurrentContainer.Networks }}
-		{{ printf "# upstream_name" $upstream_name }}
 		{{ template "upstream" (dict "Upstream" $upstream "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
 	{{ end }}
 {{ end }}
@@ -401,12 +391,6 @@ server {
 		{{/* Get the NETWORK_ACCESS defined by containers w/ the same vhost, falling back to "external" */}}
 		{{ $network_tag := or (first (groupByKeys $containers "Env.NETWORK_ACCESS")) "external" }}
 		{{ template "location" (dict "Path" "/longpolling" "Proto" $proto "Upstream" $upstream_name "Host" $host "VhostRoot" $vhost_root "Dest" "" "NetworkTag" $network_tag) }}
-		{{ printf "# test template 1" }}
-		{{ printf "# proto" $proto }}
-		{{ printf "# upstream (name)" $upstream_name }}
-		{{ printf "# host" $host }}
-		{{ printf "# vhostRoot" $vhost_root }}
-		{{ printf "# networkTag" $network_tag }}
 		{{ template "location" (dict "Path" "/" "Proto" $proto "Upstream" $upstream_name "Host" $host "VhostRoot" $vhost_root "Dest" "" "NetworkTag" $network_tag) }}
 	{{ else }}
 		{{ range $path, $container := $paths }}
