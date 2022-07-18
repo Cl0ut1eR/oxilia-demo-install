@@ -95,7 +95,7 @@ upstream {{ .Upstream }} {
         {{ $debug := (eq (coalesce $container.Env.DEBUG $debug_all "false") "true") }}
         {{/* If only 1 port exposed, use that as a default, else 80 */}}
         {{ $defaultPort := (when (eq (len $container.Addresses) 1) (first $container.Addresses) (dict "Port" "80")).Port }}
-        {{ $port := (coalesce "666" $container.Env.VIRTUAL_PORT $defaultPort) }}
+        {{ $port := (coalesce $force_port $container.Env.VIRTUAL_PORT $defaultPort) }}
         {{ $address := where $container.Addresses "Port" $port | first }}
         {{ if $debug }}
         # Exposed ports: {{ $container.Addresses }}
