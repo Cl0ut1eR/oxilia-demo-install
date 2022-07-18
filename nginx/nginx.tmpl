@@ -271,8 +271,9 @@ server {
 	{{ printf "# test upstream 1" }}
 	{{ printf "# network" $CurrentContainer.Networks }}
 	{{ printf "# upstream_name" $upstream_name }}
+	{{ $test := "8080" }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8080") }}
+	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" $test) }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
