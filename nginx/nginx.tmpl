@@ -114,17 +114,20 @@ upstream {{ .Upstream }} {
                             {{ $server_found = "true" }}
         # {{ $container.Node.Name }}/{{ $container.Name }}
         server {{ $container.Node.Address.IP }}:{{ $address.HostPort }};
+			{{ printf "# test serv 1 " }}
                         {{/* If there is no swarm node or the port is not published on host, use container's IP:PORT */}}
                         {{ else if $containerNetwork }}
                             {{ $server_found = "true" }}
         # {{ $container.Name }}
         server {{ $containerNetwork.IP }}:{{ $address.Port }};
+					{{ printf "# test serv 2 " }}
                         {{ end }}
                     {{ else if $containerNetwork }}
         # {{ $container.Name }}
                         {{ if $containerNetwork.IP }}
                             {{ $server_found = "true" }}
         server {{ $containerNetwork.IP }}:{{ $port }};
+					{{ printf "# test serv 3 " }}
                         {{ else }}
         # /!\ No IP for this network!
                     	{{ end }}
