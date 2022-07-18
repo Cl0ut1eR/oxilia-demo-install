@@ -95,7 +95,7 @@ upstream {{ .Upstream }} {
         {{/* If only 1 port exposed, use that as a default, else 80 */}}
         {{ $defaultPort := (when (eq (len $container.Addresses) 1) (first $container.Addresses) (dict "Port" "80")).Port }}
         {{ $port := (coalesce $container.Env.VIRTUAL_PORT $defaultPort) }}
-        {{ $address := where $container.Addresses "Port" $port | first }}
+        {{ $address := (coalesce .ForcePort (where $container.Addresses "Port" $port | first) }}
         {{ if $debug }}
         # Exposed ports: {{ $container.Addresses }}
         # Default virtual port: {{ $defaultPort }}
@@ -270,7 +270,7 @@ server {
 	{{ printf "# network" $CurrentContainer.Networks }}
 	{{ printf "# upstream_name" $upstream_name }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
+	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8080") }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
