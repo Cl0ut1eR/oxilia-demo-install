@@ -9,7 +9,6 @@ services:
             - "/var/lib/docker/nginx-volumes/dhparam:/etc/nginx/dhparam"
             - "/var/lib/docker/nginx-volumes/vhost.d:/etc/nginx/vhost.d"
             - "/var/lib/docker/nginx-volumes/certs:/etc/nginx/certs"
-            #- "/var/lib/docker/nginx-volumes/default-config/nginx.tmpl:/app/nginx.tmpl"
             - "/run/docker.sock:/tmp/docker.sock:ro"
         restart: "always"
         networks:
