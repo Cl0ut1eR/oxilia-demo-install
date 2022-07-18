@@ -89,7 +89,7 @@
 	{{ $networks := .Networks }}
 	{{ $debug_all := .Debug }}
 	{{ $force_port := .ForcePort }}
-upstream {{ .Upstream }}{{ if (.ForcePort) }}:{{ $force_port }}{{ end }} {
+upstream {{ .Upstream }} {
 	{{ $server_found := "false" }}
 	{{ range $container := .Containers }}
         {{ $debug := (eq (coalesce $container.Env.DEBUG $debug_all "false") "true") }}
@@ -266,7 +266,7 @@ server {
 {{ if eq $nPaths 0 }}
 	# {{ $host }}
 	{{ template "upstream" (dict "Upstream" $upstream_name "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all) }}
-	{{ template "upstream" (dict "Upstream" {{$upstream_name prinftf "hello"}} "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8072") }}
+	{{ template "upstream" (dict "Upstream" "{{ $upstream_name }}hello" "Containers" $containers "Networks" $CurrentContainer.Networks "Debug" $debug_all "ForcePort" "8072") }}
 {{ else }}
 	{{ range $path, $containers := $paths }}
 		{{ $sum := sha1 $path }}
